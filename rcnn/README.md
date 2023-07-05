@@ -1,6 +1,6 @@
 # Rcnn
 
-The Pytorch implementation is [facebookresearch/detectron2](https://github.com/facebookresearch/detectron2). Now, outputting instance segmentation results on the original image size is available, which is more convenient for engineering applications.
+The Pytorch implementation is [facebookresearch/detectron2](https://github.com/facebookresearch/detectron2). Now, outputting instance segmentation results on the original image size and selecting different nms methods are available, which is more convenient for engineering applications.
 
 ## Models
 
@@ -10,12 +10,20 @@ The Pytorch implementation is [facebookresearch/detectron2](https://github.com/f
 
 ## Test Environment
 
+- GTX3090 / Ubuntu20.04 / cuda11 / cudnn8.0.4 / TensorRT8.1.1 / OpenCV4.5  form docker hakuyyf/tensorrtx:trt8_cuda11
 - GTX2080Ti / Ubuntu16.04 / cuda10.2 / cudnn8.0.4 / TensorRT7.2.1 / OpenCV4.2
 - GTX2080Ti / win10 / cuda10.2 / cudnn8.0.4 / TensorRT7.2.1 / OpenCV4.2 / VS2017 (need to replace function corresponding to the dirent.h and add "--extended-lambda" in CUDA C/C++ -> Command Line -> Other options)
 
 TensorRT7.2 is recomended because Resize layer in 7.0 with kLINEAR mode is a little different with opencv. You can also implement data preprocess out of tensorrt if you want to use TensorRT7.0 or more previous version. 
+TensorRT 8.x is supported and you can use it.
 
 **The result under fp32 is same to pytorch about 4 decimal places**!
+
+## Contributors
+
+<a href="https://github.com/HaiyangPeng"><img src="https://avatars.githubusercontent.com/u/46739135?v=4" width="40px;" alt=""/></a>
+<a href="https://github.com/nengwp"><img src="https://avatars.githubusercontent.com/u/44516353?s=96&v=4" width="40px;" alt=""/></a>
+<a href="https://github.com/freedenS"><img src="https://avatars.githubusercontent.com/u/26213470?v=4" width="40px;" alt=""/></a>
 
 ## How to Run
 
